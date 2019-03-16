@@ -4,14 +4,12 @@ import './index.css';
 import Main from './Main';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import * as serviceWorker from './serviceWorker';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme(
     {
         palette: {
-       
           theme: 'dark'
-    
         },
       }
 );
@@ -20,8 +18,12 @@ console.log(theme);
 
 
 render(<MuiThemeProvider theme={theme}>
-                    <Main/>
-        </MuiThemeProvider>,
+			<Router>
+        <Switch>
+          <Route path="/" component={Main} />
+        </Switch>
+			</Router>             
+      </MuiThemeProvider>,
 
      document.getElementById('root'));
 

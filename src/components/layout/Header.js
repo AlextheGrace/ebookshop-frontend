@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -55,10 +56,10 @@ render() {
   const fullList = (
     <div className={classes.fullList}>
       <List>
-        {['Books', 'Authors', 'Contact'].map((text, index) => (
-          <ListItem button key={text}>
+        {[{text:'Books',link:'/'}, {text:'Authors', link:'/authors'}, {text:'Contact' ,link: '/contact'}].map((item, index) => (
+          <ListItem button component={Link} to={item.link} key={item}>
             <ListItemIcon>{index % 2 === 0 ? <BookIcon   /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={item.text} />
           </ListItem>
         ))}
       </List>
