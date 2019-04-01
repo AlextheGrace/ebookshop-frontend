@@ -23,7 +23,6 @@ class Main extends Component {
     const { classes } = this.props;
     return (
       <div className="Main">
-        <Header></Header>
         <Switch>
           <Route exact path="/" component={Books}/>
           <Route path="/authors" component={Authors}/>

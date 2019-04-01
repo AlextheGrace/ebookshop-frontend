@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+import Grid from '@material-ui/core/Grid';
+import { Header } from './layout'
+import { Book } from './Books';
+import './books.css';
 
+ 
 
-const styles = theme => ({
+const styles = {
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+
   },
-  gridList: {
-    width: 500,
-    height: 450,
+  GridContainer: {
+    maxWidth: 50,
+  },
+  Grid: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
-});
+  Featured: {
+    maxWidth: 800,
+    maxHeight: 300
+  },
+  bookItem: {
+    maxWidth: 200,
+    maxHeight: 300
+  }
+};
 
 
 
@@ -32,7 +39,8 @@ class Books extends Component {
 	constructor(props, context) {
 		super(props);
 		this.state = {
-			stuff: [{ title: "something about flints", author:"Roger Grace"  },{ title: "something about lifting speakers", author:"Daniel Alexander"  } ]
+      featuredBooks: [],
+			books: [{ title: "something about flints", author:"Roger Grace"  },{ title: "something about flints", author:"Roger Grace"  },{ title: "something about lifting speakers", author:"Daniel Alexander"  } ]
 		};
 	}
 
@@ -44,25 +52,55 @@ class Books extends Component {
 
 return (
   <div className={classes.root}>
-    <GridList cellHeight={180} className={classes.gridList}>
-      <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-        <ListSubheader component="div">books</ListSubheader>
-      </GridListTile>
-      {stuff.map(tile => (
-        <GridListTile key={tile.img}>
-          <img src={tile.img} alt={tile.title} />
-          <GridListTileBar
-            title={tile.title}
-            subtitle={<span>by: {tile.author}</span>}
-            // actionIcon={
-            //   <IconButton className={classes.icon}>
-            //     <InfoIcon />
-            //   </IconButton>
-            // }
-          />
-        </GridListTile>
-      ))}
-    </GridList>
+  <Header></Header>
+
+  <Grid container spacing={16} style={{padding: 40}}>
+        <Grid item xs={12} className={classes.Grid}>
+          <h1>Latest publications</h1>
+        </Grid>
+        <Grid item xs={4} className={classes.Grid}>
+          <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid}>
+          <img  className={classes.Featured} src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid}>
+          <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+
+  <Grid container spacing={24} style={{padding: 20}}>
+        <Grid item xs={12} className={classes.Grid}>
+          <h1>Books</h1>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid} >
+          <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+ 
+        <Grid item xs={4} className={classes.Grid} >
+          <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid} >
+          <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid} >
+          <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+ 
+        <Grid item xs={4} className={classes.Grid} >
+          <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+
+        <Grid item xs={4} className={classes.Grid} >
+          <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+        </Grid>
+      </Grid>
+    </Grid>
   </div>
 );
 }

@@ -21,6 +21,7 @@ render(<MuiThemeProvider theme={theme}>
 			<Router>
         <Switch>
           <Route path="/" component={Main} />
+          <Route path='/dashboard' render={(props) => <Book {...props} isAuthed={true} />} />
         </Switch>
 			</Router>             
       </MuiThemeProvider>,
