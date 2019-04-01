@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './index.css';
+import { Book } from './components';
 import Main from './Main';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import * as serviceWorker from './serviceWorker';
@@ -21,7 +22,7 @@ render(<MuiThemeProvider theme={theme}>
 			<Router>
         <Switch>
           <Route path="/" component={Main} />
-          <Route path='/dashboard' render={(props) => <Book {...props} isAuthed={true} />} />
+          <Route path='/books' render={(props) => <Book {...props} isAuthed={true} />} />
         </Switch>
 			</Router>             
       </MuiThemeProvider>,
