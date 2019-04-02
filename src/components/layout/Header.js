@@ -69,7 +69,7 @@ render() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="black">
+      <AppBar  title={<img src="https://unsplash.it/40/40" alt="IKARUS BOOKS"/>} position="static" color="black">
         <Toolbar>
           <IconButton className={classes.menuButton}  color="white" aria-label="Menu" onClick={this.toggleDrawer('left', true)}>
             <MenuIcon />
