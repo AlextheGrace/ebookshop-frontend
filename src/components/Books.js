@@ -59,15 +59,15 @@ return (
           <h1>Latest publications</h1>
         </Grid>
         <Grid item xs={4} className={classes.Grid}>
-          <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={4} className={classes.Grid}>
-          <img  className={classes.Featured} src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img>
+          {/* <img  className={classes.Featured} src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={4} className={classes.Grid}>
-          <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
 
@@ -77,27 +77,27 @@ return (
         </Grid>
 
         <Grid item xs={4} className={classes.Grid} >
-          <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
  
         <Grid item xs={4} className={classes.Grid} >
-          <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={4} className={classes.Grid} >
-          <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={4} className={classes.Grid} >
-          <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
  
         <Grid item xs={4} className={classes.Grid} >
-          <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img className={classes.bookItem}  src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={4} className={classes.Grid} >
-          <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img  className={classes.bookItem} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
       </Grid>
     </Grid>

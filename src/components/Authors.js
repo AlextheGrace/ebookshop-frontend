@@ -36,39 +36,39 @@ class Authors extends Component {
         <Grid container spacing={32} style={{padding: 40}}>
 
         <Grid item xs={6} className={classes.Grid}>
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid}>
-          <img src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
  
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
  
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
         <Grid item xs={6} className={classes.Grid} >
-          <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img>
+          {/* <img src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
         </Grid>
 
       </Grid>
