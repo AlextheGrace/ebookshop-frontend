@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Header } from './layout';
 import { Book } from './Books';
+import axios from 'axios';
 import './books.css';
 
 const styles = {
@@ -40,6 +41,13 @@ class Books extends Component {
 				{ title: 'something about lifting speakers', author: 'Daniel Alexander' }
 			]
 		};
+	}
+
+	componentDidMount() {
+		axios.get('http://localhost:5000/api/books')
+			.then(res => {
+				console.log(res);
+			})
 	}
 
 	render() {
