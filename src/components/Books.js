@@ -46,8 +46,12 @@ class Books extends Component {
 	componentDidMount() {
 		axios.get('http://localhost:5000/api/books')
 			.then(res => {
-				console.log(res);
+				this.setState( {books: res.data});
 			})
+			.catch(error => {
+				console.log(`error getting books ${error}`);
+			})
+		
 	}
 
 	render() {
@@ -74,14 +78,14 @@ class Books extends Component {
 						{/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
 					</Grid>
 
-					<Grid container spacing={24} style={{ padding: 20 }}>
+					<Grid container spacing={16} style={{ padding: 20 }}>
 						<Grid item xs={12} className={classes.Grid}>
 							<h1>Books</h1>
 						</Grid>
 						{books.map(book => (
 							<Grid item xs={4} className={classes.Grid}>
 								<img src={book.img} alt={book.title} />
-								<p>{book.description}</p>
+								{/* <p>{book.description}</p> */}
 							</Grid>
 						))}
 					</Grid>
