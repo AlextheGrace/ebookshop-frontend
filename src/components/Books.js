@@ -27,7 +27,10 @@ const styles = {
 	},
 	bookItem: {
 		maxWidth: 200,
-		maxHeight: 300
+		maxHeight: 300,
+		shadowOffset:{  width: 10,  height: 10,  },
+		shadowColor: 'black',
+		shadowOpacity: 1.0,
 	}
 };
 
@@ -91,9 +94,10 @@ class Books extends Component {
 						</Grid>
 						{books.map(book => (
 							<Grid item xs={4} className={classes.Grid}>
-								<Link to={`/books/${book.title}`}>
-									<img src={book.img} alt={book.title} />
-									{/* <p>{book.description}</p> */}
+							
+								<Link to={`/books/${book._id}`}>
+									<img className="img-books" src={book.img} alt={book.title} />
+									
 								</Link>
 							</Grid>
 						))}
