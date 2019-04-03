@@ -30,8 +30,8 @@ const styles = {
 
   },
   icon: {
-    width: 100,
-    height: 55
+    width: 80,
+    height: 30
   }
 };
 
@@ -82,7 +82,7 @@ render() {
           <Typography variant="h6" color="white" className={classes.grow}>
             IKARUS BOOKS
           </Typography>
-          <img  className={classes.icon}src="https://res.cloudinary.com/ikarus-books/image/upload/v1554311376/ikaruslogo.jpg" alt="flintknapping"></img>
+          <img  className={classes.icon}src="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png" alt="flintknapping"></img>
           
         </Toolbar>
       </AppBar>

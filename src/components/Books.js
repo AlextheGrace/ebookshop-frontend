@@ -45,13 +45,14 @@ class Books extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:5000/api/books')
+		axios
+			.get('http://localhost:5000/api/books')
 			.then(res => {
-				this.setState( {books: res.data});
+				this.setState({ books: res.data });
 			})
 			.catch(error => {
 				console.log(`error getting books ${error}`);
-			});	
+			});
 	}
 
 	render() {
@@ -63,8 +64,11 @@ class Books extends Component {
 				<Header />
 
 				<Grid container spacing={16} style={{ padding: 40 }}>
-				<Grid item xs={12} className={classes.Grid}>
-						<img src="https://res.cloudinary.com/ikarus-books/image/upload/v1554311376/ikaruslogo.jpg" alt="flintknapping"></img>
+					<Grid item xs={12} className={classes.Grid}>
+						<img
+							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
+							alt="flintknapping"
+						/>
 					</Grid>
 					<Grid item xs={12} className={classes.Grid}>
 						<h1>Latest publications</h1>
@@ -86,20 +90,17 @@ class Books extends Component {
 							<h1>Books</h1>
 						</Grid>
 						{books.map(book => (
-							
 							<Grid item xs={4} className={classes.Grid}>
 								<Link to={`/books/${book.title}`}>
-								<img src={book.img} alt={book.title} />
-								{/* <p>{book.description}</p> */}
+									<img src={book.img} alt={book.title} />
+									{/* <p>{book.description}</p> */}
 								</Link>
 							</Grid>
-							
-						
 						))}
 					</Grid>
 				</Grid>
 			</div>
-		  );
+		);
 	}
 }
 Books.propTypes = {

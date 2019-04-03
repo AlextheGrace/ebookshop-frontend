@@ -12,17 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
 	palette: {
-		primary: {
-			light: lightGreen[300],
-			main: lightGreen[500],
-			dark: lightGreen[700]
-		},
-		secondary: {
-			light: blueGrey[300],
-			main: blueGrey[500],
-			dark: blueGrey[700]
-		},
-		type: 'dark'
+
 	}
 });
 

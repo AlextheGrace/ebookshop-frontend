@@ -6,12 +6,15 @@ class Book extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      
-    }
+    // this.state = {
+    //   book:
+    // }
   }
   componentDidMount() {
-    axios.get('http://localhost:5000/api/books/')
+    axios.get(`http://localhost:5000/api/books/${this.props.match.params.title}`)
+      .then((res) => {
+        this.setState({})
+      })
     console.table(this.props.match.params.title);
   };
   render() {
