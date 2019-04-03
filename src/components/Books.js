@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Header } from './layout';
+import { Link } from 'react-router-dom';
 import { Book } from './Books';
 import axios from 'axios';
 import './books.css';
@@ -50,8 +51,7 @@ class Books extends Component {
 			})
 			.catch(error => {
 				console.log(`error getting books ${error}`);
-			})
-		
+			});	
 	}
 
 	render() {
@@ -63,6 +63,9 @@ class Books extends Component {
 				<Header />
 
 				<Grid container spacing={16} style={{ padding: 40 }}>
+				<Grid item xs={12} className={classes.Grid}>
+						<img src="https://res.cloudinary.com/ikarus-books/image/upload/v1554311376/ikaruslogo.jpg" alt="flintknapping"></img>
+					</Grid>
 					<Grid item xs={12} className={classes.Grid}>
 						<h1>Latest publications</h1>
 					</Grid>
@@ -83,10 +86,15 @@ class Books extends Component {
 							<h1>Books</h1>
 						</Grid>
 						{books.map(book => (
+							
 							<Grid item xs={4} className={classes.Grid}>
+								<Link to={`/books/${book.title}`}>
 								<img src={book.img} alt={book.title} />
 								{/* <p>{book.description}</p> */}
+								</Link>
 							</Grid>
+							
+						
 						))}
 					</Grid>
 				</Grid>

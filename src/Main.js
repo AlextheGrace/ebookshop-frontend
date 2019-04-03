@@ -27,7 +27,7 @@ class Main extends Component {
           <Route exact path="/" component={Books}/>
           <Route path="/authors" component={Authors}/>
           <Route path="/contact" component={Contact}/>
-          <Route path="/books/:id" component={Book}/>
+          <Route path="/books/:title" component={Book}/>
         </Switch>
       </div>
     );

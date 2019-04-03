@@ -29,6 +29,10 @@ const styles = {
     marginRight: 20,
 
   },
+  icon: {
+    width: 100,
+    height: 55
+  }
 };
 
 class Header extends React.Component {
@@ -69,14 +73,16 @@ render() {
 
   return (
     <div className={classes.root}>
-      <AppBar  title={<img src="https://unsplash.it/40/40" alt="IKARUS BOOKS"/>} position="static" color="black">
+      <AppBar position="static" color="white">
         <Toolbar>
           <IconButton className={classes.menuButton}  color="white" aria-label="Menu" onClick={this.toggleDrawer('left', true)}>
-            <MenuIcon />
+            <MenuIcon />      
           </IconButton>
+          
           <Typography variant="h6" color="white" className={classes.grow}>
             IKARUS BOOKS
           </Typography>
+          <img  className={classes.icon}src="https://res.cloudinary.com/ikarus-books/image/upload/v1554311376/ikaruslogo.jpg" alt="flintknapping"></img>
           
         </Toolbar>
       </AppBar>
