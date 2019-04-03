@@ -79,7 +79,7 @@ class Books extends Component {
 					</Grid>
 				</Grid>
 			</div>
-		);
+		  );
 	}
 }
 Books.propTypes = {
