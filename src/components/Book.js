@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './layout'
-
+import axios from 'axios';
 
 class Book extends Component {
 
@@ -9,6 +9,9 @@ class Book extends Component {
     this.state = {
       
     }
+  }
+  componentDidMount() {
+    axios.get('')
   };
   render() {
     const { classes } = this.props;
