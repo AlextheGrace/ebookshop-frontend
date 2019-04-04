@@ -48,13 +48,14 @@ class Books extends Component {
 	}
 
 	componentDidMount() {
-		axios
-			.get('http://localhost:5000/api/books')
+		console.log(process.env.API_URL);
+
+		axios.get('http://localhost:5000/api/books')
 			.then(res => {
 				this.setState({ books: res.data });
 			})
 			.catch(error => {
-				console.log(`error getting books ${error}`);
+				console.log(`error getting books: ${error}`);
 			});
 	}
 

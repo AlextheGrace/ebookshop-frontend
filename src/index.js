@@ -4,8 +4,8 @@ import './index.css';
 import { Book } from './components';
 import Main from './Main';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import blueGrey from "@material-ui/core/colors/blueGrey";
-import lightGreen from "@material-ui/core/colors/lightGreen";
+// import blueGrey from "@material-ui/core/colors/blueGrey";
+// import lightGreen from "@material-ui/core/colors/lightGreen";
 
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
