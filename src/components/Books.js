@@ -67,14 +67,14 @@ class Books extends Component {
 			<div className={classes.root}>
 				<Header />
 
-				<Grid container spacing={16} style={{ padding: 40 }}>
+				<Grid container  spacing={16} style={{ padding: 40 }}>
 					<Grid item xs={12} className={classes.Grid}>
 						<img
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
 							alt="flintknapping"
 						/>
 					</Grid>
-					<Grid item xs={12} className={classes.Grid}>
+					<Grid item xs={12}  className={classes.Grid}>
 						<h1>Latest publications</h1>
 					</Grid>
 					<Grid item xs={4} className={classes.Grid}>
@@ -90,7 +90,7 @@ class Books extends Component {
 					</Grid>
 
 					<Grid container spacing={16} style={{ padding: 20 }}>
-						<Grid item xs={12} className={classes.Grid}>
+						<Grid item justify="flex-start" xs={12} className={classes.Grid}>
 							<h1>Books</h1>
 						</Grid>
 						{books.map(book => (
