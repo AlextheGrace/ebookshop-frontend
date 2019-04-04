@@ -38,7 +38,27 @@ class Book extends Component {
 		this.state = {
 			book: {}
 		};
-	}
+  }
+  
+  onToken = (token) => {
+    const body = {
+      amount: 666,
+      token: token
+    }
+    axios
+    .post("http://localhost:5000/checkout", body)
+    .then(res => {
+      console.log(res);
+      alert("Payment Success");
+    })
+    .catch(error => {
+      console.log("Payment Error: ", error);
+      alert("Payment Error");
+    });
+};
+  }
+
+
 	componentDidMount() {
 		axios.get(`http://localhost:5000/api/books/${this.props.match.params.title}`).then(res => {
 			console.log(res);
@@ -65,11 +85,11 @@ class Book extends Component {
 							amount={book.price}
 							billingAddress
 							description={book.title}
-							image="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
+              image="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
+              token={this.onToken}
 							locale="auto"
 							name="Ikarus Books"
 							stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
-							token={this.onToken}
 							zipCode
 						/>
 					</Grid>
