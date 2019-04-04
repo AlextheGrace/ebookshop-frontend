@@ -13,22 +13,7 @@ const styles = {
 
 
 class Footer extends React.Component {
-  state = {
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  };
-
-  toggleDrawer = (side, open) => () => {
-    this.setState({
-      [side]: open,
-    });
-  };
-
-
-
-
+    
 render() {
   const { classes } = this.props;
 
