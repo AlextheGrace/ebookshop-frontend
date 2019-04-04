@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 
-
-
+const styles = {
+    root: {
+      flexGrow: 1,
+      marginBottom: -10
+    },
+  };
 
 
 class Footer extends React.Component {
