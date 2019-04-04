@@ -56,7 +56,7 @@ class Book extends Component {
       alert("Payment Error");
     });
 };
-  }
+  
 
 
 	componentDidMount() {
