@@ -97,7 +97,7 @@ class Books extends Component {
 							<Grid item xs={4} className={classes.Grid}>
 							
 								<Link to={`/books/${book._id}`}>
-									<img className="img-books" src={book.img} alt={book.title} />
+									<img className="books" src={book.img} alt={book.title} />
 									
 								</Link>
 							</Grid>

@@ -5,11 +5,14 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import StripeCheckout from 'react-stripe-checkout';
+import './books.css';
 
 const styles = {
 	root: {},
 	GridContainer: {
-		maxWidth: 50
+    maxWidth: 50,
+    display: 'flex',
+    justifyContent: 'center'
 	},
 	Grid: {
 		display: 'flex',
@@ -46,7 +49,7 @@ class Book extends Component {
       token: token
     }
     axios
-    .post("http://localhost:5000/checkout", body)
+    .post("http://localhost:5000/api/checkout", body)
     .then(res => {
       console.log(res);
       alert("Payment Success");
@@ -72,9 +75,9 @@ class Book extends Component {
 		return (
 			<div className="Book">
 				<Header />
-				<Grid container spacing={16} style={{ padding: 40 }}>
+				<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
 					<Grid item xs={4} className={classes.Grid}>
-						<img src={book.img} alt="flintknapping" />
+						<img className="book" src={book.img} alt="flintknapping" />
 					</Grid>
 					<Grid item xs={4}>
 						<p>{book.description}</p>
@@ -90,7 +93,8 @@ class Book extends Component {
 							locale="auto"
 							name="Ikarus Books"
 							stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
-							zipCode
+              zipCode
+              email
 						/>
 					</Grid>
 				</Grid>

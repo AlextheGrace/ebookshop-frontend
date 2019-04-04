@@ -1,11 +1,18 @@
-img {
+.books {
     max-width: 15rem;
     max-height: 20rem;
     align-self: center;
     transition: all .2s ease-in-out;
 }
 
-img:hover {
+.books:hover {
     transform: scale(1.1);
     align-self: center;
+}
+
+.book {
+    max-width: 15rem;
+    max-height: 20rem;
+    align-self: center;
+    transition: all .2s ease-in-out;
 }
