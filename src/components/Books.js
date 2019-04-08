@@ -77,6 +77,9 @@ class Books extends Component {
 					<Grid item xs={12}  className={classes.Grid}>
 						<h1>Latest publications</h1>
 					</Grid>
+
+					{/*  latest publication loop goes here */}
+					
 					<Grid item xs={4} className={classes.Grid}>
 						{/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
 					</Grid>
