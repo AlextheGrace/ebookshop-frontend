@@ -92,11 +92,11 @@ class Book extends Component {
 
 		let env = 'sandbox'; // you can set here to 'production' for production
 		let currency = 'USD'; // or you can set this value from your props or state
-		let total = 1; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
+		let total = book.price; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
 		// Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
 		const client = {
-			sandbox: 'YOUR-SANDBOX-APP-ID',
+			sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
 			production: 'YOUR-PRODUCTION-APP-ID'
 		};
 
@@ -110,9 +110,6 @@ class Book extends Component {
 					<Grid item xs={4}>
 						<h2>{book.title}</h2>
 						<p>{book.description}</p>
-						<Button variant="contained" href="#contained-buttons" className={classes.button}>
-							Buy
-						</Button>
 
 						<StripeCheckout
 							amount={book.price}
@@ -123,9 +120,10 @@ class Book extends Component {
 							locale="auto"
 							name="Ikarus Books"
 							stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
-							zipCode
+							zipCode 
 							email
 						/>
+
 						<PaypalExpressBtn
 							env={env}
 							client={client}
@@ -135,6 +133,7 @@ class Book extends Component {
 							onSuccess={onSuccess}
 							onCancel={onCancel}
 						/>
+
 					</Grid>
 				</Grid>
 			</div>
