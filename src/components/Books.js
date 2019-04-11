@@ -58,11 +58,19 @@ class Books extends Component {
 			.catch(error => {
 				console.log(`error getting books: ${error}`);
 			});
+
+		axios.get(process.env.REACT_APP_API_URL+'/latest')
+			.then(res => {
+				this.setState({ featuredBooks: res.data });
+			})
+			.catch(error => {
+				console.log(`error getting books: ${error}`);
+			});
 	}
 
 	render() {
 		const { classes } = this.props;
-		const { books } = this.state;
+		const { books, featuredBooks } = this.state;
 
 		return (
 			<div className={classes.root}>
@@ -79,19 +87,15 @@ class Books extends Component {
 						<h1>Latest publications</h1>
 					</Grid>
 
-					{/*  latest publication loop goes here */}
-					
-					<Grid item xs={4} className={classes.Grid}>
-						{/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
-					</Grid>
-
-					<Grid item xs={4} className={classes.Grid}>
-						{/* <img  className={classes.Featured} src={require("./assets/img/chaineoperatore.jpg")} alt="flintknapping"></img> */}
-					</Grid>
-
-					<Grid item xs={4} className={classes.Grid}>
-						{/* <img  className={classes.Featured} src={require("./assets/img/flintknapping.jpg")} alt="flintknapping"></img> */}
-					</Grid>
+					{featuredBooks.map(book => (
+							<Grid item xs={4} className={classes.Grid}>
+							
+								<Link to={`/books/${book._id}`}>
+									<img className="books" src={book.img} alt={book.title} />
+									
+								</Link>
+							</Grid>
+						))}
 
 					<Grid container spacing={16} style={{ padding: 20 }}>
 						<Grid item justify="flex-start" xs={12} className={classes.Grid}>
