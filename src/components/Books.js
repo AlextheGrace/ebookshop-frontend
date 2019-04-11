@@ -48,8 +48,9 @@ class Books extends Component {
 	}
 
 	componentDidMount() {
-		console.log(process.env.API_URL);
 
+		console.log(process.env.REACT_APP_API_URL);
+		
 		axios.get('http://localhost:5000/api/books')
 			.then(res => {
 				this.setState({ books: res.data });
@@ -71,7 +72,7 @@ class Books extends Component {
 					<Grid item xs={12} className={classes.Grid}>
 						<img
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
-							alt="flintknapping"
+							alt="ikarus logo"
 						/>
 					</Grid>
 					<Grid item xs={12}  className={classes.Grid}>

@@ -80,10 +80,13 @@ class Book extends Component {
 						<img className="book" src={book.img} alt="flintknapping" />
 					</Grid>
 					<Grid item xs={4}>
+						<h2>{book.title}</h2>
 						<p>{book.description}</p>
 						<Button variant="contained" href="#contained-buttons" className={classes.button}>
 							Buy
 						</Button>
+
+
 						<StripeCheckout
 							amount={book.price}
 							billingAddress
