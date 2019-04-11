@@ -63,7 +63,7 @@ class Book extends Component {
 
 
 	componentDidMount() {
-		axios.get(`http://localhost:5000/api/books/${this.props.match.params.title}`).then(res => {
+		axios.get(`${process.env.REACT_APP_API_URL}/books/${this.props.match.params.title}`).then(res => {
 			console.log(res);
 			this.setState({ book: res.data });
 		});

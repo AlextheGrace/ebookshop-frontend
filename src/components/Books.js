@@ -48,10 +48,8 @@ class Books extends Component {
 	}
 
 	componentDidMount() {
-
-		console.log(process.env.REACT_APP_API_URL);
-		
-		axios.get('http://localhost:5000/api/books')
+			
+		axios.get(process.env.REACT_APP_API_URL+'/books')
 			.then(res => {
 				this.setState({ books: res.data });
 			})
