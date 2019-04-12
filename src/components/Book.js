@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header } from './layout';
+import { Header, Footer } from './layout';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -101,8 +101,8 @@ class Book extends Component {
 		};
 
 		return (
+			<div>
 			<div className="Book">
-				<Header />
 				<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
 					<Grid item xs={4} className={classes.Grid}>
 						<img className="book" src={book.img} alt="flintknapping" />
@@ -120,7 +120,7 @@ class Book extends Component {
 							locale="auto"
 							name="Ikarus Books"
 							stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
-							zipCode 
+							zipCode
 							email
 						/>
 
@@ -133,10 +133,12 @@ class Book extends Component {
 							onSuccess={onSuccess}
 							onCancel={onCancel}
 						/>
-
 					</Grid>
 				</Grid>
 			</div>
+			<Footer/>
+			</div>
+			
 		);
 	}
 }

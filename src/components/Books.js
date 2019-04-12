@@ -72,7 +72,6 @@ class Books extends Component {
 
 		return (
 			<div className={classes.root}>
-				<Header />
 
 				<Grid container  spacing={16} style={{ padding: 40 }}>
 					<Grid item xs={12} className={classes.Grid}>
