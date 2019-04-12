@@ -111,6 +111,7 @@ class Book extends Component {
 						<h2>{book.title}</h2>
 						<p>{book.description}</p>
 
+
 						<StripeCheckout
 							amount={book.price}
 							billingAddress
