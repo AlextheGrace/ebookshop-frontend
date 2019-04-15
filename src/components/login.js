@@ -35,7 +35,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: 'white',
+    backgroundColor: 'lightGrey',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -49,6 +49,29 @@ const styles = theme => ({
 
 
 class Login extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			email: '',
+			password: ''
+		}
+		this.onChange = this.onChange.bind(this);
+    	this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+
+
+	onChange = (event) => {
+		this.setState({ [event.target.name]: event.target.value });
+	}
+
+	handleSubmit = (event) => {
+		event.preventDefault();
+		alert(this.state.email, this.state.password);
+		
+	}
+
 	render() {
 		const { classes } = this.props;
 		return (
@@ -64,21 +87,21 @@ class Login extends Component {
 			  <form className={classes.form}>
 				<FormControl margin="normal" required fullWidth>
 				  <InputLabel htmlFor="email">Email Address</InputLabel>
-				  <Input id="email" name="email" autoComplete="email" autoFocus />
+				  <Input id="email" name="email" value={this.state.email} onChange={this.onChange}  autoComplete="email" autoFocus />
 				</FormControl>
 				<FormControl margin="normal" required fullWidth>
 				  <InputLabel htmlFor="password">Password</InputLabel>
-				  <Input name="password" type="password" id="password" autoComplete="current-password" />
+				  <Input name="password" value={this.state.password} onChange={this.onChange}  type="password" id="password" autoComplete="current-password" />
 				</FormControl>
 				<FormControlLabel
 				  control={<Checkbox value="remember"  />}
 				  label="Remember me"
 				/>
 				<Button
-				  type="submit"
+				  
 				  fullWidth
 				  variant="contained"
-				  
+				  onSubmit={this.handleSubmit}
 				  className={classes.submit}
 				>
 				  Sign in
