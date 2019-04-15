@@ -51,24 +51,24 @@ const styles = theme => ({
 class Login extends Component {
 	constructor(props) {
 		super(props);
-
+		this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 		this.state = {
 			email: '',
 			password: ''
 		}
-		this.onChange = this.onChange.bind(this);
-    	this.handleSubmit = this.handleSubmit.bind(this);
+
 	}
 
 
 
-	onChange = (event) => {
+	onChange = (event, value) => {
 		this.setState({ [event.target.name]: event.target.value });
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		alert(this.state.email, this.state.password);
+		console.table(this.state.email, this.state.password);
 		
 	}
 
@@ -84,24 +84,23 @@ class Login extends Component {
 			  <Typography component="h1" variant="h5">
 				Login
 			  </Typography>
-			  <form className={classes.form}>
+			  <form className={classes.form} onSubmit={this.handleSubmit}>
 				<FormControl margin="normal" required fullWidth>
 				  <InputLabel htmlFor="email">Email Address</InputLabel>
-				  <Input id="email" name="email" value={this.state.email} onChange={this.onChange}  autoComplete="email" autoFocus />
+				  <Input id="email" type="text" name="email" value={this.state.email} onChange={this.onChange}  autoComplete="email" autoFocus />
 				</FormControl>
 				<FormControl margin="normal" required fullWidth>
 				  <InputLabel htmlFor="password">Password</InputLabel>
-				  <Input name="password" value={this.state.password} onChange={this.onChange}  type="password" id="password" autoComplete="current-password" />
+				  <Input name="password"  value={this.state.password} onChange={this.onChange}  type="password" id="password" autoComplete="current-password" />
 				</FormControl>
 				<FormControlLabel
 				  control={<Checkbox value="remember"  />}
 				  label="Remember me"
 				/>
 				<Button
-				  
+					onClick={this.handleSubmit}
 				  fullWidth
 				  variant="contained"
-				  onSubmit={this.handleSubmit}
 				  className={classes.submit}
 				>
 				  Sign in
