@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Header } from './layout';
 import { Link } from 'react-router-dom';
 import { Book } from './Books';
 import axios from 'axios';

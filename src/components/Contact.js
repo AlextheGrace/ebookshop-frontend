@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Header } from './layout';
 import Grid from '@material-ui/core/Grid';
 
 class Contact extends Component {
