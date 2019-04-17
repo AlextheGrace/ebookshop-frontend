@@ -45,8 +45,10 @@ class Book extends Component {
 	}
 
 	onToken = token => {
+
+		const price = this.state.book.price * 100;
 		const body = {
-			amount: 666,
+			amount: price,
 			token: token
 		};
 		axios

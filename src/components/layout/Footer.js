@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { isAbsolute } from 'path';
+import Grid from '@material-ui/core/Grid';
 
 const styles = {
 	root: {
 		flexGrow: 1,
 		marginTop: 30,
-		position: 'absolute',
-		width: '100',
-		height: '100'
+		borderTop: 'solid 3px black',
+		padding: '8px 16px 16px 0'
 	}
 };
 
@@ -18,7 +18,10 @@ class Footer extends React.Component {
 	render() {
 		const { classes } = this.props;
 
-		return <div className={classes.root}>Footer</div>;
+		return <div className={classes.root}>
+			<Grid container spacing={24}>
+
+			</Grid> </div>;
 	}
 }
 Footer.propTypes = {
