@@ -9,7 +9,7 @@ const styles = {
 	root: {
 		flexGrow: 1,
 		marginTop: 30,
-		borderTop: 'solid 3px black',
+		boxShadowTop: 'solid 1px black',
 		padding: '8px 16px 16px 0'
 	}
 };
@@ -18,10 +18,15 @@ class Footer extends React.Component {
 	render() {
 		const { classes } = this.props;
 
-		return <div className={classes.root}>
-			<Grid container spacing={24}>
-
-			</Grid> </div>;
+		return (
+			<div className={classes.root}>
+				<Grid container spacing={24}>
+					<Grid>
+						<Paper>footer 1</Paper>
+					</Grid>
+				</Grid>
+			</div>
+		);
 	}
 }
 Footer.propTypes = {

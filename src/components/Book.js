@@ -142,7 +142,6 @@ class Book extends Component {
 						</Grid>
 					</Grid>
 				</div>
-				<Footer />
 			</div>
 		);
 	}
