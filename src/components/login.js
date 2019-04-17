@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-
+// import { AppContext } from '../context/AppContext';
 const styles = theme => ({
   main: {
     width: 'auto',
@@ -61,7 +61,10 @@ class Login extends Component {
 	}
 
 
+	componentDidMount() {
+		console.log(this.context.username)
 
+	}
 	onChange = (event, value) => {
 		this.setState({ [event.target.name]: event.target.value });
 	}
@@ -69,7 +72,6 @@ class Login extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		console.table(this.state.email, this.state.password);
-		
 	}
 
 	render() {

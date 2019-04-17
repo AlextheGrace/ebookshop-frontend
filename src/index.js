@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import './index.css';
 import { Book } from './components';
 import Main from './Main';
+import AppProvider  from './context/AppContext';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 // import blueGrey from "@material-ui/core/colors/blueGrey";
 // import lightGreen from "@material-ui/core/colors/lightGreen";
@@ -11,21 +12,21 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
-	palette: {
-
-	}
+	palette: {}
 });
 
 console.log(theme);
 
 render(
 	<MuiThemeProvider theme={theme}>
-		<Router>
-			<Switch>
-				<Route path="/" component={Main} />
-				<Route path="/books" render={props => <Book {...props} isAuthed={true} />} />
-			</Switch>
-		</Router>
+		<AppProvider>
+			<Router>
+				<Switch>
+					<Route path="/" component={Main} />
+					<Route path="/books" render={props => <Book {...props} isAuthed={true} />} />
+				</Switch>
+			</Router>
+		</AppProvider>
 	</MuiThemeProvider>,
 	document.getElementById('root')
 );

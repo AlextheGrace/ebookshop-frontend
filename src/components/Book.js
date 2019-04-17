@@ -65,8 +65,9 @@ class Book extends Component {
 		axios.get(`${process.env.REACT_APP_API_URL}/books/${this.props.match.params.title}`).then(res => {
 			console.log(res);
 			this.setState({ book: res.data });
+			console.log(this.state.book.price);
 		});
-		console.table(this.props.match.params.title);
+		
 	}
 	render() {
 		const { classes } = this.props;
@@ -75,6 +76,7 @@ class Book extends Component {
 			// Congratulation, it came here means everything's fine!
 			console.log('The payment was succeeded!', payment);
 			// You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
+			//route to
 		};
 
 		const onCancel = data => {
@@ -102,44 +104,44 @@ class Book extends Component {
 
 		return (
 			<div>
-			<div className="Book">
-				<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
-					<Grid item xs={4} className={classes.Grid}>
-						<img className="book" src={book.img} alt="flintknapping" />
+				<div className="Book">
+					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
+						<Grid item xs={4} className={classes.Grid}>
+							<img className="book" src={book.img} alt="flintknapping" />
+						</Grid>
+						<Grid item xs={4}>
+							<h2>{book.title}</h2>
+							<p>{book.description}</p>
+							<h4>Price: {book.price}$</h4>
+							<div className="payment-options">
+								<StripeCheckout
+									amount={book.price * 100}
+									billingAddress
+									description={book.title}
+									image="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
+									token={this.onToken}
+									locale="auto"
+									name="Ikarus Books"
+									stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
+									zipCode
+									email
+								/>
+
+								<PaypalExpressBtn
+									env={env}
+									client={client}
+									currency={currency}
+									total={total}
+									onError={onError}
+									onSuccess={onSuccess}
+									onCancel={onCancel}
+								/>
+							</div>
+						</Grid>
 					</Grid>
-					<Grid item xs={4}>
-						<h2>{book.title}</h2>
-						<p>{book.description}</p>
-
-
-						<StripeCheckout
-							amount={book.price}
-							billingAddress
-							description={book.title}
-							image="https://res.cloudinary.com/ikarus-books/image/upload/v1554314839/ikaruslogocropped2.png"
-							token={this.onToken}
-							locale="auto"
-							name="Ikarus Books"
-							stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
-							zipCode
-							email
-						/>
-
-						<PaypalExpressBtn
-							env={env}
-							client={client}
-							currency={currency}
-							total={total}
-							onError={onError}
-							onSuccess={onSuccess}
-							onCancel={onCancel}
-						/>
-					</Grid>
-				</Grid>
+				</div>
+				<Footer />
 			</div>
-			<Footer/>
-			</div>
-			
 		);
 	}
 }
