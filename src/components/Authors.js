@@ -16,7 +16,10 @@ const styles = {
 	icon: {
 		color: 'rgba(255, 255, 255, 0.54)'
 	},
-	img: {}
+	img: {},
+	authorName: {
+		marginTop: 0
+	}
 };
 
 class Authors extends Component {
@@ -31,7 +34,7 @@ class Authors extends Component {
 					{/* authors */}
 
 					<Grid item xs={4}>
-						<h3>Daniel Alexander</h3>
+						<h3 className={classes.authorName} >Daniel Alexander</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202885/danielalexander.jpg"
@@ -47,7 +50,7 @@ class Authors extends Component {
 					</Grid>
 
 					<Grid item xs={4}>
-						<h3>Ray Meddis</h3>
+						<h3 className={classes.authorName} >Ray Meddis</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202885/Raymeddis.jpg"
@@ -62,7 +65,7 @@ class Authors extends Component {
 					</Grid>
 
 					<Grid item xs={4}>
-						<h3>Roger Grace</h3>
+						<h3 className={classes.authorName} >Roger Grace</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202884/RogerGrace.jpg"
@@ -78,7 +81,7 @@ class Authors extends Component {
 					</Grid>
 
 					<Grid item xs={4}>
-						<h3>John Lord</h3>
+						<h3 className={classes.authorName} >John Lord</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202885/johnLord.jpg"
@@ -96,7 +99,7 @@ class Authors extends Component {
 					</Grid>
 
 					<Grid item xs={4}>
-						<h3>Esmée Attema & David Ewing</h3>
+						<h3 className={classes.authorName} >Esmée Attema & David Ewing</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202884/EmseeDavid.jpg"
@@ -113,7 +116,7 @@ class Authors extends Component {
 					</Grid>
 
 					<Grid item xs={4}>
-						<h3>Enid Hibbert & Pamela Finch</h3>
+						<h3 className={classes.authorName} >Enid Hibbert & Pamela Finch</h3>
 						<img
 							className="books"
 							src="https://res.cloudinary.com/ikarus-books/image/upload/v1554202885/EnidPamela.jpg"

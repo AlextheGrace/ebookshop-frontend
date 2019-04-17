@@ -25,7 +25,7 @@ const styles = theme => ({
       marginLeft: 'auto',
       marginRight: 'auto',
     },
-  },
+	},
   paper: {
     marginTop: theme.spacing.unit * 8,
     display: 'flex',
