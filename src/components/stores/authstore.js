@@ -8,11 +8,11 @@ class AuthStore {
 	@observable auth = false;
 
 	@action
-	async fetchTodos() {
+	async LoginAdmin() {
 		this.isFetching = true;
 		this.error = null;
 		try {
-			const response = await axios.get('https://your-server.com/todos');
+			const response = await axios.get(http://localhost:5000/auth/login);
 			this.todos = response.data.todos;
 			this.isFetching = false;
 		} catch (error) {

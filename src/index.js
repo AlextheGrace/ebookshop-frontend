@@ -4,9 +4,8 @@ import './index.css';
 import { Book } from './components';
 import Main from './Main';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-// import blueGrey from "@material-ui/core/colors/blueGrey";
-// import lightGreen from "@material-ui/core/colors/lightGreen";
-
+import { Provider } from 'mobx-react';
+import stores from './stores/stores'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -18,12 +17,14 @@ console.log(theme);
 
 render(
 	<MuiThemeProvider theme={theme}>
+		<Provider {...stores}>
 			<Router>
 				<Switch>
 					<Route path="/" component={Main} />
 					<Route path="/books" render={props => <Book {...props} isAuthed={true} />} />
 				</Switch>
 			</Router>
+		</Provider>
 	</MuiThemeProvider>,
 	document.getElementById('root')
 );
