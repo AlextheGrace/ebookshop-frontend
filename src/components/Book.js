@@ -67,7 +67,6 @@ class Book extends Component {
 		axios.get(`${process.env.REACT_APP_API_URL}/books/${this.props.match.params.title}`).then(res => {
 			console.log(res);
 			this.setState({ book: res.data });
-			console.log(this.state.book.price);
 		});
 		
 	}
@@ -114,7 +113,7 @@ class Book extends Component {
 						<Grid item xs={4}>
 							<h2>{book.title}</h2>
 							<p>{book.description}</p>
-							<h4>Price: {book.price}$</h4>
+							<h4>Price: ${book.price}</h4>
 							<div className="payment-options">
 								<StripeCheckout
 									amount={book.price * 100}
