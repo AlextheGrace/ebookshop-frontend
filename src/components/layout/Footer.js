@@ -10,7 +10,9 @@ const styles = {
 		flexGrow: 1,
 		marginTop: 30,
 		boxShadowTop: 'solid 1px black',
-		padding: '8px 16px 16px 0'
+		padding: '8px 16px 16px 0',
+		background: 'black',
+		color: 'white'
 	}
 };
 
@@ -21,8 +23,15 @@ class Footer extends React.Component {
 		return (
 			<div className={classes.root}>
 				<Grid container spacing={24}>
-					<Grid>
-						<Paper>footer 1</Paper>
+
+					<Grid item xs={12} sm={4}>
+						for enquiries 
+					</Grid>
+					<Grid item xs={12} sm={4} >
+						<Paper>footer 2</Paper>
+					</Grid>
+					<Grid item xs={12} sm={4}>
+						<Paper>footer 3</Paper>
 					</Grid>
 				</Grid>
 			</div>

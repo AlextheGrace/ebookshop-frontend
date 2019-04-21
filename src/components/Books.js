@@ -83,7 +83,7 @@ class Books extends Component {
 					</Grid>
 
 					{featuredBooks.map(book => (
-							<Grid item xs={4} className={classes.Grid}>
+							<Grid item xs={12} sm={6} md={4} className={classes.Grid}>
 							
 								<Link to={`/books/${book._id}`}>
 									<img className="books" src={book.img} alt={book.title} />
@@ -97,7 +97,7 @@ class Books extends Component {
 							<h1>Books</h1>
 						</Grid>
 						{books.map(book => (
-							<Grid item xs={4} className={classes.Grid}>
+							<Grid item xs={12} sm={6} md={4} className={classes.Grid}>
 							
 								<Link to={`/books/${book._id}`}>
 									<img className="books" src={book.img} alt={book.title} />
