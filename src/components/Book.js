@@ -107,10 +107,10 @@ class Book extends Component {
 			<div>
 				<div className="Book">
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
-						<Grid item xs={4} className={classes.Grid}>
+						<Grid item xs={12} sm={4} className={classes.Grid}>
 							<img className="book" src={book.img} alt="flintknapping" />
 						</Grid>
-						<Grid item xs={4}>
+						<Grid item xs={12} sm={4}>
 							<h2>{book.title}</h2>
 							<p>{book.description}</p>
 							<h4>Price: ${book.price}</h4>
