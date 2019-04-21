@@ -8,16 +8,23 @@ class AuthStore {
 	@observable auth = false;
 
 	@action
-	async LoginAdmin() {
+	async LoginAdmin(username, password) {
 		this.isFetching = true;
 		this.error = null;
 		try {
-			const response = await axios.get(http://localhost:5000/auth/login);
-			this.todos = response.data.todos;
+			const response = await axios.post(process.env.REACT_APP_API_URL+'/auth/login',{
+                username,
+                password
+            });
+			this.user = response.data.user;
 			this.isFetching = false;
 		} catch (error) {
 			this.error = error;
 			this.isFetching = false;
 		}
+	}
+	@action testingAuth = () => {
+		console.log('test action mobx');
+		
 	}
 }

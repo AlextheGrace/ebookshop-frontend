@@ -13,7 +13,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-// import { AppContext } from '../context/AppContext';
+import { inject, observer } from 'mobx-react';
+
 const styles = theme => ({
   main: {
     width: 'auto',
@@ -45,9 +46,10 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
   },
 });
-	
 
-
+//mobx
+@inject('authStore')
+@observer
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -57,12 +59,11 @@ class Login extends Component {
 			email: '',
 			password: ''
 		}
-
+		this.testingAuth = () => this.props.authStore.testingAuth()
 	}
-
-
+	
 	componentDidMount() {
-		console.log(this.context.username)
+		this.testingAuth();
 
 	}
 	onChange = (event, value) => {
