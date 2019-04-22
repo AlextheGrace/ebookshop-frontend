@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { action, computed, observable } from 'mobx';
+import { action, computed, observable, decorate } from 'mobx';
 
-class AuthStore {
+export default class AuthStore {
 	@observable error = null;
 	@observable isFetching = false;
 	@observable user = {};
-	@observable auth = false;
+	auth = false;
 
-	@action
 	async LoginAdmin(username, password) {
 		this.isFetching = true;
 		this.error = null;
@@ -23,8 +22,35 @@ class AuthStore {
 			this.isFetching = false;
 		}
 	}
-	@action testingAuth = () => {
+	async testingAuth() {
 		console.log('test action mobx');
 		
 	}
+
+
 }
+
+	// decorate(AuthStore, {
+	// 	error: observable,
+	// 	isFetching: observable,
+	// 	user: observable,
+	// 	auth: observable,
+	// 	LoginAdmin: action,
+	// 	testingAuth: action
+	// })
+
+// class Store {
+//       //...
+//        empty() {
+//         this.data = []
+//       }
+
+//       add(e) {
+//         this.data.push(e)
+//       }
+//     }
+
+// decorate(Store, {
+//   add: action,
+//   empty: action
+// })

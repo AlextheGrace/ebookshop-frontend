@@ -99,10 +99,8 @@ class Books extends Component {
 						</Grid>
 						{books.map(book => (
 							<Grid item xs={4} className={classes.Grid}>
-							
 								<Link to={`/books/${book._id}`}>
-									<img className="books" src={book.img} alt={book.title} />
-									
+									<img className="books" src={book.img} alt={book.title} />		
 								</Link>
 							</Grid>
 						))}

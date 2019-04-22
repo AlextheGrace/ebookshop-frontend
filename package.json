@@ -3,29 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "^7.4.0",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "@material-ui/styles": "^3.0.0-alpha.10",
     "axios": "^0.18.0",
-    "customize-cra": "^0.2.12",
     "material-ui": "^1.0.0-beta.47",
     "material-ui-icons": "^1.0.0-beta.36",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "react": "^16.8.4",
-    "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.4",
     "react-paypal-express-checkout": "^1.0.5",
     "react-router-dom": "^4.0.0",
     "react-scripts": "2.1.8",
-    "react-stripe-checkout": "^2.6.3"
+    "react-stripe-checkout": "^2.6.3",
+    "typescript": "^3.4.4"
   },
   "engines": {
     "node": "10.10.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,6 +38,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-app-env": "^1.2.3"
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "customize-cra": "^0.2.12",
+    "react-app-env": "^1.2.3",
+    "react-app-rewired": "^2.1.1"
   }
 }

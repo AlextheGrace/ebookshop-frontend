@@ -5,7 +5,7 @@ import { Book } from './components';
 import Main from './Main';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Provider } from 'mobx-react';
-import stores from './stores/stores'
+import stores from './components/stores/stores';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

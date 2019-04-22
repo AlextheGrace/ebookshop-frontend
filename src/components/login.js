@@ -47,8 +47,9 @@ const styles = theme => ({
   },
 });
 
-//mobx
-@inject('authStore')
+
+
+@inject('AuthStore')
 @observer
 class Login extends Component {
 	constructor(props) {
