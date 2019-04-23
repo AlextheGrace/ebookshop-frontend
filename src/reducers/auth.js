@@ -7,6 +7,7 @@ const initialState = {
   error: null,
   isFetching: false,
   user: {},
+  isAuth: false
 }
 export default (reduxState = initialState, action) => {
   const { type, payload } = action
@@ -20,7 +21,7 @@ export default (reduxState = initialState, action) => {
       return {
         ...reduxState,
         isFetching: false,
-        todos: payload.todos,
+        user: payload.todos,
       }
     case LOGINFAILURE:
       return {
@@ -32,7 +33,7 @@ export default (reduxState = initialState, action) => {
       return reduxState
   }
 }
-export const performTodosIndex = () => dispatch => {
+export const loginAdmin = (username, password) => dispatch => {
   dispatch({ type: LOGINREQUEST })
   return axios.get('https://your-server.com/todos')
     .then((response) => {
