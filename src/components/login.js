@@ -51,7 +51,7 @@ const styles = theme => ({
 
 @inject('AuthStore')
 @observer
-class Login extends Component {
+ class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.onChange = this.onChange.bind(this);
@@ -60,12 +60,12 @@ class Login extends Component {
 			email: '',
 			password: ''
 		}
-		this.testingAuth = () => this.props.authStore.testingAuth()
+		// this.testingAuth = () => this.props.AuthStore.testingAuth();
 	}
 	
 	componentDidMount() {
-		this.testingAuth();
-
+		console.log(this.props.AuthStore.testing);
+		this.props.AuthStore.testingAuth();
 	}
 	onChange = (event, value) => {
 		this.setState({ [event.target.name]: event.target.value });
@@ -77,7 +77,9 @@ class Login extends Component {
 	}
 
 	render() {
-		const { classes } = this.props;
+		const { classes, AuthStore } = this.props;
+
+	
 		return (
 			<main className={classes.main}>
 			<CssBaseline />

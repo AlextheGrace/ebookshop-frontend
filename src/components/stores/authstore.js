@@ -5,9 +5,10 @@ export default class AuthStore {
 	@observable error = null;
 	@observable isFetching = false;
 	@observable user = {};
+	@observable testing = 'wfwefewf';
 	auth = false;
 
-	async LoginAdmin(username, password) {
+	@action async LoginAdmin(username, password) {
 		this.isFetching = true;
 		this.error = null;
 		try {
@@ -22,7 +23,7 @@ export default class AuthStore {
 			this.isFetching = false;
 		}
 	}
-	async testingAuth() {
+	@action testingAuth() {
 		console.log('test action mobx');
 		
 	}
