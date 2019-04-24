@@ -56,20 +56,18 @@ class Login extends Component {
 			email: '',
 			password: ''
 		};
-		this.loginAdmin = () => this.props.loginAdmin()
+		
 	}
 
-	componentDidMount() {
-		
-		
-	}
+	componentDidMount() {}
 	onChange = (event, value) => {
 		this.setState({ [event.target.name]: event.target.value });
 	};
 
 	handleSubmit = event => {
 		event.preventDefault();
-		this.loginAdmin(this.state.email, this.state.password);
+		console.log(this.state.email);
+		this.props.dispatch(loginAdmin(this.state.email, this.state.password)); 
 	};
 
 	render() {
@@ -122,8 +120,5 @@ class Login extends Component {
 const mapStateToProps = ({ auth }) => ({
 	auth
 });
-const mapDispatchToProps = () => ({
-	loginAdmin
-});
 
-export default connect(mapStateToProps, mapDispatchToProps())(withStyles(styles)(Login));
+export default connect(mapStateToProps)(withStyles(styles)(Login));
