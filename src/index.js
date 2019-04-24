@@ -3,11 +3,9 @@ import { render } from 'react-dom';
 import './index.css';
 import { Book } from './components';
 import Main from './Main';
-import AppProvider  from './context/AppContext';
+import { Provider }  from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-// import blueGrey from "@material-ui/core/colors/blueGrey";
-// import lightGreen from "@material-ui/core/colors/lightGreen";
-
+import store  from './store';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -19,17 +17,19 @@ console.log(theme);
 
 render(
 	<MuiThemeProvider theme={theme}>
-		<AppProvider>
+		<Provider store={store}>
 			<Router>
 				<Switch>
 					<Route path="/" component={Main} />
 					<Route path="/books" render={props => <Book {...props} isAuthed={true} />} />
 				</Switch>
 			</Router>
-		</AppProvider>
+		</Provider>
 	</MuiThemeProvider>,
 	document.getElementById('root')
 );
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

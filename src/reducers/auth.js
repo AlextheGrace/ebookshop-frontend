@@ -40,7 +40,7 @@ export const loginAdmin = (username, password) => dispatch => {
       dispatch({
         type: LOGINSUCCESS,
         payload: {
-          todos: response.data.todos,
+          user: response.data.user,
         },
       })
     })
