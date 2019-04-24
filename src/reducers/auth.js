@@ -36,7 +36,7 @@ export default (reduxState = initialState, action) => {
 export const loginAdmin = (username, password) => dispatch => {
   dispatch({ type: LOGINREQUEST })
   console.log(username, password);
-  return axios.post('https://your-server.com/todos')
+  return axios.post('https://your-server.com/todos',{ username, password})
     .then((response) => {
       
       //store jwt in cookie or localstorage here..
