@@ -37,7 +37,7 @@ export const loginAdmin = (username, password) => dispatch => {
   dispatch({ type: LOGINREQUEST })
   return axios.post(`${process.env.REACT_APP_API_URL}/auth/login`,{ username, password})
     .then((response) => {
-      
+        
       //store jwt in cookie or localstorage here..
       dispatch({
         type: LOGINSUCCESS,

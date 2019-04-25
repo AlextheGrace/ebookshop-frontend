@@ -59,14 +59,18 @@ class Login extends Component {
 		
 	}
 
+	
+
 	componentDidMount() {}
 	onChange = (event, value) => {
 		this.setState({ [event.target.name]: event.target.value });
+		
 	};
 
 	handleSubmit = event => {
 		event.preventDefault();
 		console.log(this.state.email);
+		console.log(this.props.auth);
 		this.props.dispatch(loginAdmin(this.state.email, this.state.password)); 
 	};
 
