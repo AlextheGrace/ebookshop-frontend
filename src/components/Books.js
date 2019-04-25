@@ -55,7 +55,7 @@ class Books extends Component {
 				console.log(`error getting books: ${error}`);
 			});
 
-		axios.get(process.env.REACT_APP_API_URL+'/latest')
+		axios.get(process.env.REACT_APP_API_URL+'/books/latest')
 			.then(res => {
 				this.setState({ featuredBooks: res.data });
 			})

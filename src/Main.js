@@ -24,14 +24,14 @@ class Main extends Component {
 		return (
 			<div className="Main">
 				<Header />
-				<Switch>
-					<Route exact path="/" component={Books} />
-					<Route path="/authors" component={Authors} />
-					<Route path="/contact" component={Contact} />
-					<Route path="/login" component={Login} />
-					<Route path="/books/:title" component={Book} />
-				</Switch>
-        <Footer />
+					<Switch>
+						<Route exact path="/" component={Books} />
+						<Route path="/authors" component={Authors} />
+						<Route path="/contact" component={Contact} />
+						<Route path="/login" component={Login} />
+						<Route path="/books/:title" component={Book} />
+					</Switch>
+       			<Footer />
 			</div>
 		);
 	}
