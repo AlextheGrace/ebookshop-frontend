@@ -41,10 +41,10 @@ function Dashboard(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat (g)</TableCell>
-            <TableCell align="right">Carbs (g)</TableCell>
+            <TableCell>id</TableCell>
+            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">published (g)</TableCell>
+            <TableCell align="right">created (g)</TableCell>
             <TableCell align="right">Protein (g)</TableCell>
           </TableRow>
         </TableHead>
@@ -66,7 +66,7 @@ function Dashboard(props) {
   );
 }
 
-SimpleTable.propTypes = {
+Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
