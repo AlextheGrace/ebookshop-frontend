@@ -45,7 +45,7 @@ class Dashboard extends Component {
 
 		return (
 			<div>
-				<Button fullWidth variant="contained" className={classes.submit}>
+				<Button fullWidth variant="contained"  className={classes.submit}>
 					Publish new book
 				</Button>
 				<Paper className={classes.root}>
