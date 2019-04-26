@@ -21,7 +21,6 @@ export default (reduxState = initialState, action) => {
       return {
         ...reduxState,
         isFetching: false,
-        user: payload.todos,
       }
     case LOGINFAILURE:
       return {
@@ -37,12 +36,14 @@ export const loginAdmin = (username, password) => dispatch => {
   dispatch({ type: LOGINREQUEST })
   return axios.post(`${process.env.REACT_APP_API_URL}/auth/login`,{ username, password})
     .then((response) => {
-      
-      //store jwt in cookie or localstorage here..
+      console.log(response);
+      localStorage.setItem('user', response.data.token);
       dispatch({
         type: LOGINSUCCESS,
         payload: {
           user: response.data.user,
+          auth: response.data.auth,
+
         },
       })
     })

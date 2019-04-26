@@ -52,7 +52,7 @@ class Book extends Component {
 			token: token
 		};
 		axios
-			.post('http://localhost:5000/api/checkout', body)
+			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
 				console.log(res);
 				alert('Payment Success');

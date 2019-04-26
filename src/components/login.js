@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { loginAdmin } from '../reducers/auth';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 const styles = theme => ({
 	main: {
 		width: 'auto',
@@ -71,7 +72,12 @@ class Login extends Component {
 	};
 
 	render() {
-		const { classes } = this.props;
+		const { classes, auth } = this.props;
+
+		if (auth) {
+			return <Redirect to="/dashboard" />;
+		}
+
 		return (
 			<main className={classes.main}>
 				<CssBaseline />
