@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { logoutAdmin } from '../reducers/auth';
 
 const styles = theme => ({
 	root: {
@@ -21,26 +23,13 @@ const styles = theme => ({
 	}
 });
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-	id += 1;
-	return { id, name, calories, fat, carbs, protein };
-}
-
-const rows = [
-	createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-	createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-	createData('Eclair', 262, 16.0, 24, 6.0),
-	createData('Cupcake', 305, 3.7, 67, 4.3),
-	createData('Gingerbread', 356, 16.0, 49, 3.9)
-];
-
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
       books: [],
     };
+    this.logout = this.logout.bind(this);
 	}
 
 	componentDidMount() {
@@ -52,13 +41,22 @@ class Dashboard extends Component {
 			.catch(error => {
 				console.log(`error getting books: ${error}`);
 			});
-	}
+  }
+  
+  logout() {
+    this.props.dispatch(logoutAdmin());
+
+  }
 
 	render() {
-		const { classes } = this.props;
+		const { classes, auth } = this.props;
     const { books } = this.state;
 		return (
-			<div>
+			<div>	
+        <Button fullWidth variant="contained" onClick={this.logout} className={classes.submit}>
+					Logout
+				</Button>
+				<div>{auth.user.username}</div>
 				<Button fullWidth variant="contained" className={classes.submit}>
 					Publish new book
 				</Button>
@@ -66,10 +64,10 @@ class Dashboard extends Component {
 					<Table className={classes.table}>
 						<TableHead>
 							<TableRow>
-								<TableCell align="right">Title</TableCell>
-								<TableCell align="right">published</TableCell>
-								<TableCell align="right">price</TableCell>
-								<TableCell align="right">options</TableCell>
+								<TableCell align="left">Title</TableCell>
+								<TableCell align="center">published</TableCell>
+								<TableCell align="center">price</TableCell>
+								<TableCell align="center">options</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -95,4 +93,11 @@ Dashboard.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Dashboard);
+
+const mapStateToProps = ({ auth, user }) => ({
+  auth,
+  user
+});
+
+export default connect(mapStateToProps)(withStyles(styles)(Dashboard));
+

@@ -2,12 +2,15 @@ import axios from 'axios';
 const LOGINREQUEST = 'auth/REQUEST';
 const LOGINSUCCESS = 'auth/SUCCESS';
 const LOGINFAILURE = 'auth/FAILURE';
+const LOGOUTSTART = 'LOGOUT_START';
+const LOGOUTFAILURE = 'LOGOUT_FAILURE';
+const LOGOUTSUCCESS = 'LOGOUT_SUCCESS';
 
 const initialState = {
   error: null,
   isFetching: false,
   user: {},
-  isAuth: false
+  auth: false
 }
 export default (reduxState = initialState, action) => {
   const { type, payload } = action
@@ -16,17 +19,37 @@ export default (reduxState = initialState, action) => {
       return {
         ...reduxState,
         isFetching: true,
+        
       }
     case LOGINSUCCESS:
       return {
         ...reduxState,
         isFetching: false,
+        auth: payload.auth,
+        user: payload.user
       }
     case LOGINFAILURE:
       return {
         ...reduxState,
         error: payload.error,
         isFetching: false,
+      }
+    case LOGOUTSTART:
+      return {
+        ...reduxState,
+        isFetching: false,
+      }
+    case LOGOUTFAILURE:
+      return {
+        ...reduxState,
+        isFetching: false,
+      }
+    case LOGOUTSUCCESS:
+      return {
+        ...reduxState,
+        isFetching: false,
+        user: {},
+        auth: false
       }
     default:
       return reduxState
@@ -52,7 +75,24 @@ export const loginAdmin = (username, password) => dispatch => {
         type: LOGINFAILURE,
         payload: {
           error,
+          auth: false
         },
       })
     })
+}
+
+export const logoutAdmin = () => dispatch => {
+  dispatch({ type: LOGOUTSTART });
+
+  try {
+    localStorage.removeItem('user');
+    return dispatch({
+        type: LOGOUTSUCCESS
+    })
+} catch (e) {
+    return dispatch({
+        type: LOGOUTFAILURE
+    })
+
+}
 }

@@ -59,6 +59,7 @@ class Login extends Component {
 		};
 		
 	}
+	
 
 	componentDidMount() {}
 	onChange = (event, value) => {
@@ -69,12 +70,13 @@ class Login extends Component {
 		event.preventDefault();
 		console.log(this.state.email);
 		this.props.dispatch(loginAdmin(this.state.email, this.state.password)); 
+		console.log("hello",this.props.auth);
 	};
 
 	render() {
 		const { classes, auth } = this.props;
 
-		if (auth) {
+		if (auth.auth) {
 			return <Redirect to="/dashboard" />;
 		}
 
