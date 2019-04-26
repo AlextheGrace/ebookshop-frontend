@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 const styles = theme => ({
 	root: {
@@ -37,38 +38,49 @@ const rows = [
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+      books: [],
+    };
+	}
+
+	componentDidMount() {
+		axios
+			.get(process.env.REACT_APP_API_URL + '/books')
+			.then(res => {
+				this.setState({ books: res.data });
+			})
+			.catch(error => {
+				console.log(`error getting books: ${error}`);
+			});
 	}
 
 	render() {
 		const { classes } = this.props;
-
+    const { books } = this.state;
 		return (
 			<div>
-				<Button fullWidth variant="contained"  className={classes.submit}>
+				<Button fullWidth variant="contained" className={classes.submit}>
 					Publish new book
 				</Button>
 				<Paper className={classes.root}>
 					<Table className={classes.table}>
 						<TableHead>
 							<TableRow>
-								<TableCell>id</TableCell>
-								<TableCell align="right">Name</TableCell>
+								<TableCell align="right">Title</TableCell>
 								<TableCell align="right">published</TableCell>
-								<TableCell align="right">created</TableCell>
-								{/* <TableCell align="right">Protein (g)</TableCell> */}
+								<TableCell align="right">price</TableCell>
+								<TableCell align="right">options</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{rows.map(row => (
-								<TableRow key={row.id}>
+							{books.map(book => (
+								<TableRow key={book._id}>
 									<TableCell component="th" scope="row">
-										{row.name}
+										{book.title}
 									</TableCell>
-									<TableCell align="right">{row.calories}</TableCell>
-									<TableCell align="right">{row.fat}</TableCell>
-									<TableCell align="right">{row.carbs}</TableCell>
-									<TableCell align="right">{row.protein}</TableCell>
+									<TableCell align="right">{book.publishedAt}</TableCell>
+									<TableCell align="right">${book.price}</TableCell>
+									<TableCell align="right"><Button>edit</Button><Button>delete</Button></TableCell>
 								</TableRow>
 							))}
 						</TableBody>
