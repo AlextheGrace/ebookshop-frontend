@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { logoutAdmin } from '../reducers/auth';
-
+import { Redirect } from 'react-router-dom';
 const styles = theme => ({
 	root: {
 		width: '100%',
@@ -50,7 +50,11 @@ class Dashboard extends Component {
 
 	render() {
 		const { classes, auth } = this.props;
-    const { books } = this.state;
+		const { books } = this.state;
+		
+		if (!auth.auth) {
+			return <Redirect to="/login" />;
+		}
 		return (
 			<div>	
         <Button fullWidth variant="contained" onClick={this.logout} className={classes.submit}>
@@ -78,12 +82,14 @@ class Dashboard extends Component {
 									</TableCell>
 									<TableCell align="right">{book.publishedAt}</TableCell>
 									<TableCell align="right">${book.price}</TableCell>
-									<TableCell align="right"><Button>edit</Button><Button>delete</Button></TableCell>
+									<TableCell align="right"><Button onClick={this.deleteBook} ></Button><Button onCLick={this.editBook
+									}>edit</Button></TableCell>
 								</TableRow>
-							))}
+							))};
 						</TableBody>
 					</Table>
 				</Paper>
+			
 			</div>
 		);
 	}
@@ -94,9 +100,9 @@ Dashboard.propTypes = {
 };
 
 
-const mapStateToProps = ({ auth, user }) => ({
-  auth,
-  user
+const mapStateToProps = ({ auth }) => ({
+  auth
+  
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(Dashboard));
