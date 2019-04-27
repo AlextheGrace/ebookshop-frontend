@@ -29,7 +29,10 @@ class Dashboard extends Component {
 		this.state = {
       books: [],
     };
-    this.logout = this.logout.bind(this);
+		this.logout = this.logout.bind(this);
+		this.publishBook = this.publishBook.bind(this);
+		this.editBook = this.editBook.bind(this);
+		this.deleteBook = this.deleteBook.bind(this);
 	}
 
 	componentDidMount() {
@@ -46,7 +49,18 @@ class Dashboard extends Component {
   logout() {
     this.props.dispatch(logoutAdmin());
 
-  }
+	}
+	publishBook() {
+
+	}
+	
+	editBook() {
+
+	}
+
+	deleteBook() {
+
+	}
 
 	render() {
 		const { classes, auth } = this.props;
