@@ -87,7 +87,7 @@ class Books extends Component {
 					{featuredBooks.map(book => (
 						<Grid item xs={12} sm={6} md={4} className={classes.Grid}>
 							<Link to={`/books/${book._id}`}>
-								<img className="books" src={book.img} alt={book.title} />
+								<LazyLoadImage className="books" src={book.img} alt={book.title} effect="opacity" />
 							</Link>
 						</Grid>
 					))}

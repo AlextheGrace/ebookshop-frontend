@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import StripeCheckout from 'react-stripe-checkout';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './books.css';
 
 const styles = {
@@ -55,7 +56,7 @@ class Book extends Component {
 			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
 				console.log(res);
-				alert('Payment Success');
+
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
@@ -108,7 +109,7 @@ class Book extends Component {
 				<div className="Book">
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
 						<Grid item xs={12} sm={4} className={classes.Grid}>
-							<img className="book" src={book.img} alt="flintknapping" />
+							<LazyLoadImage className="book" src={book.img} alt="flintknapping" />
 						</Grid>
 						<Grid item xs={12} sm={4}>
 							<h2>{book.title}</h2>
