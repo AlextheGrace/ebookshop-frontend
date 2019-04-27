@@ -51,7 +51,7 @@ class Dashboard extends Component {
 
 	}
 	publishBook() {
-
+	
 	}
 	
 	editBook() {
