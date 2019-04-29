@@ -115,7 +115,7 @@ class Authors extends Component {
 						</p>
 					</Grid>
 
-					<Grid item xs={4}>
+					{/* <Grid item xs={4}>
 						<h3 className={classes.authorName} >Enid Hibbert & Pamela Finch</h3>
 						<img
 							className="books"
@@ -135,7 +135,7 @@ class Authors extends Component {
 							Museum. She is a joint secretary of the Elmton with Creswell Local History Group and has
 							been involved in research of the villages for the various booklets produced for the group.
 						</p>
-					</Grid>
+					</Grid> */}
 				</Grid>
 			</div>
 		);
