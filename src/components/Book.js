@@ -56,7 +56,7 @@ class Book extends Component {
 			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
 				console.log(res);
-
+				alert('Payment Success');
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
@@ -74,6 +74,8 @@ class Book extends Component {
 	render() {
 		const { classes } = this.props;
 		const { book } = this.state;
+
+		// paypal functions
 		const onSuccess = payment => {
 			// Congratulation, it came here means everything's fine!
 			console.log('The payment was succeeded!', payment);
