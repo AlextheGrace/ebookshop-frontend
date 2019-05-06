@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Switch, Route } from 'react-router-dom';
 import { Books, Authors, Contact, Book, Login, Dashboard} from './components';
-
+import styling from './main.module.css';
 
 const styles = theme => ({
 	root: {
@@ -25,6 +25,7 @@ class Main extends Component {
 		return (
 			<div className="Main">
 				<Header />
+				<div className={styling['view']}>
 					<Switch>
 						<Route exact path="/" component={Books} />
 						<Route path="/authors" component={Authors} />
@@ -33,6 +34,7 @@ class Main extends Component {
 						<Route path="/dashboard" component={Dashboard} />
 						<Route path="/books/:title" component={Book} />
 					</Switch>
+				</div>
        			<Footer />
 			</div>
 		);

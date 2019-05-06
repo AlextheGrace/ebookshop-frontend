@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Header, Footer } from './layout';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -46,7 +45,6 @@ class Book extends Component {
 	}
 
 	onToken = token => {
-
 		const price = this.state.book.price * 100;
 		const body = {
 			amount: price,
@@ -69,7 +67,6 @@ class Book extends Component {
 			console.log(res);
 			this.setState({ book: res.data });
 		});
-		
 	}
 	render() {
 		const { classes } = this.props;
@@ -129,9 +126,11 @@ class Book extends Component {
 									stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
 									zipCode
 									email
-								/>
+								>
+									<Button variant="contained">buy for ${book.price}</Button>
+								</StripeCheckout>
 
-								<PaypalExpressBtn
+								{/* <PaypalExpressBtn
 									env={env}
 									client={client}
 									currency={currency}
@@ -139,7 +138,7 @@ class Book extends Component {
 									onError={onError}
 									onSuccess={onSuccess}
 									onCancel={onCancel}
-								/>
+								/> */}
 							</div>
 						</Grid>
 					</Grid>

@@ -24,13 +24,13 @@ class Footer extends React.Component {
 			<div className={classes.root}>
 				<Grid container spacing={24}>
 					<Grid item xs={12} sm={4}>
-						for enquiries
+						for enquiries contact: ikarusbooks@gmail.com
 					</Grid>
 					<Grid item xs={12} sm={4}>
-						© 2019 ikarus books
+						©2019 ikarus books
 					</Grid>
 					<Grid item xs={12} sm={4}>
-						Contact me at ikarusbooks@gmail.com
+						Contact us at ikarusbooks@gmail.com
 					</Grid>
 				</Grid>
 			</div>
