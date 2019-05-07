@@ -7,9 +7,11 @@ class Contact extends Component {
 		return (
 			<div className="Contact">
 				<Grid container spacing={24} style={{ padding: 40 }}>
-					Contact for more information or problems with billing or supply of product at:
-					ikarusbooks@gmail.com
-
+					<Grid item xs={12} >
+						<h1>Contact</h1>
+						Contact for more information or problems with billing or supply of product at:
+						ikarusbooks@gmail.com
+					</Grid>
 				</Grid>
 			</div>
 		);

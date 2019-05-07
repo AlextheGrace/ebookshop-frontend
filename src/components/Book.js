@@ -54,6 +54,7 @@ class Book extends Component {
 			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
 				console.log(res);
+				
 				alert('Payment Success');
 			})
 			.catch(error => {
@@ -113,7 +114,6 @@ class Book extends Component {
 						<Grid item xs={12} sm={4}>
 							<h2>{book.title}</h2>
 							<p>{book.description}</p>
-							<h4>Price: ${book.price}</h4>
 							<div className="payment-options">
 								<StripeCheckout
 									amount={book.price * 100}
