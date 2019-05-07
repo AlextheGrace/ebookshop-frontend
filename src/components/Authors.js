@@ -33,7 +33,7 @@ class Authors extends Component {
 				<Grid container spacing={32} style={{ padding: 40 }}>
 					{/* authors */}
 
-					<Grid item xs={4}>
+					<Grid item xs={12} md={4}>
 						<h3 className={classes.authorName} >Daniel Alexander</h3>
 						<img
 							className="books"
@@ -41,7 +41,7 @@ class Authors extends Component {
 							alt="daniel alexander"
 						/>
 					</Grid>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<p>
 							Daniel Alexander was a roadie and stage manager working in theatre and touring with rock and
 							roll bands from the 60s until retiring from the music business in 1983
@@ -49,7 +49,7 @@ class Authors extends Component {
 						<p>Current whereabouts unknown.</p>
 					</Grid>
 
-					<Grid item xs={4}>
+					<Grid item xs={12} md={4}>
 						<h3 className={classes.authorName} >Ray Meddis</h3>
 						<img
 							className="books"
@@ -57,14 +57,14 @@ class Authors extends Component {
 							alt="Ray Meddis"
 						/>
 					</Grid>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<p>
 							Ray Meddis is an Emeritus Professor at the University of Essex were he is currently the
 							Director of the Hearing Research laboratory.
 						</p>
 					</Grid>
 
-					<Grid item xs={4}>
+					<Grid item xs={12} md={4}>
 						<h3 className={classes.authorName} >Roger Grace</h3>
 						<img
 							className="books"
@@ -72,7 +72,7 @@ class Authors extends Component {
 							alt="Roger Grace"
 						/>
 					</Grid>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<p>
 							Roger Grace received his PhD from University College London and has spent more than 15 years
 							as a Lecturer in Palaeolithic Archaeology. He has recently retired from his position as
@@ -80,7 +80,7 @@ class Authors extends Component {
 						</p>
 					</Grid>
 
-					<Grid item xs={4}>
+					<Grid item xs={12} md={4}>
 						<h3 className={classes.authorName} >John Lord</h3>
 						<img
 							className="books"
@@ -88,7 +88,7 @@ class Authors extends Component {
 							alt="daniel alexander"
 						/>
 					</Grid>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<p>
 							John Lord has been a professional flint knapper for over 25 years. He has given many
 							demonstrations in museums, and for other organisations, as well as being involved with
@@ -98,7 +98,7 @@ class Authors extends Component {
 						</p>
 					</Grid>
 
-					<Grid item xs={4}>
+					<Grid item xs={12} md={4}>
 						<h3 className={classes.authorName} >Esmée Attema & David Ewing</h3>
 						<img
 							className="books"
@@ -106,7 +106,7 @@ class Authors extends Component {
 							alt="daniel alexander"
 						/>
 					</Grid>
-					<Grid item xs={8}>
+					<Grid item xs={12} md={8}>
 						<p>
 							Esmée Attema is a student at the University of Sheffield where she is currently studying for
 							her MA in Public Humanities. David Ewing is a student at the University of Sheffield where
