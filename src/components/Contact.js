@@ -9,8 +9,8 @@ class Contact extends Component {
 				<Grid container spacing={24} style={{ padding: 40 }}>
 					<Grid item xs={12} >
 						<h1>Contact</h1>
-						Contact for more information or problems with billing or supply of product at:
-						ikarusbooks@gmail.com
+						Contact for more information or problems with billing or supply of product at: 
+						 <a href="mailto:ikarusbooks@gmail.com"> ikarusbooks@gmail.com</a>
 					</Grid>
 				</Grid>
 			</div>

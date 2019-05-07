@@ -40,7 +40,9 @@ class Book extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			book: {}
+			book: {},
+			paymentSuccess: false,
+			paymentError: false,
 		};
 	}
 
@@ -55,11 +57,13 @@ class Book extends Component {
 			.then(res => {
 				console.log(res);
 				
-				alert('Payment Success');
+				alert('Payment Success')
+				this.setState({ paymentSucess: true })
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
 				alert('Payment Error');
+				this.setState({ paymentError: true })
 			});
 	};
 
