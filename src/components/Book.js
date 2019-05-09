@@ -75,7 +75,7 @@ class Book extends Component {
 	}
 	render() {
 		const { classes } = this.props;
-		const { book } = this.state;
+		const { book, paymentSuccess, paymentError } = this.state;
 
 		// paypal functions
 		const onSuccess = payment => {
@@ -107,6 +107,13 @@ class Book extends Component {
 			sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
 			production: 'YOUR-PRODUCTION-APP-ID'
 		};
+		if(paymentSuccess) {
+			return <div>GREAT SUCCESS</div>
+		}
+
+		if(paymentError) {
+			return <div>GREAT ERROR</div>
+		}
 
 		return (
 			<div>

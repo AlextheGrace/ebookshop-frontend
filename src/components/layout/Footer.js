@@ -15,18 +15,17 @@ const styles = {
 			width: 0,
 			height: 3,
 		},
-		shadowColor: '#000000',
+		shadowColor: '#B9B9B9',
 		shadowOpacity: 0.27,
 		shadowRadius: 4.65,
 		
 		elevation: 6,	
-		backgroundColor : "#0000"
+		backgroundColor : "#B9B9B9"
 	},
-	// Grid: {
-	// 	display: 'flex',
-	// 	justifyContent: 'center',
-	// 	backgroundColor: 'white'
-	// },
+	Grid: {
+		display: 'flex',
+		justifyContent: 'center',
+	}
 	// GridContainer: {
 	// 	shadowOffset: {
 	// 		width: 0,
@@ -46,14 +45,14 @@ class Footer extends React.Component {
 		return (
 			<div  className={classes.root}>
 				<Grid container spacing={24}  boxShadow={2}  className={classes.GridContainer}>
-					<Grid item xs={12} sm={4} className={classes.Grid}>
+					<Grid item xs={12} sm={12} className={classes.Grid}>
 						For enquiries contact: ikarusbooks@gmail.com
 					</Grid>
-					<Grid item xs={12} sm={4} className={classes.Grid}>
+					<Grid item xs={12} sm={12} className={classes.Grid}>
 						©2019 ikarus books
 					</Grid>
-					<Grid item xs={12} sm={4} className={classes.Grid}>
-						Contact us at ikarusbooks@gmail.com
+					<Grid item xs={12} sm={12} className={classes.Grid}>
+						©2019 ikarus books
 					</Grid>
 				</Grid>
 			</div>
