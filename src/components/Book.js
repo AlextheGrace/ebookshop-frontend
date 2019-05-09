@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import StripeCheckout from 'react-stripe-checkout';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Modal from '@material-ui/core/Modal';
 import './books.css';
 
 const styles = {
@@ -42,7 +43,7 @@ class Book extends Component {
 		this.state = {
 			book: {},
 			paymentSuccess: false,
-			paymentError: false,
+			paymentError: false
 		};
 	}
 
@@ -56,14 +57,14 @@ class Book extends Component {
 			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
 				console.log(res);
-				
-				alert('Payment Success')
-				this.setState({ paymentSucess: true })
+
+				alert('Payment Success');
+				this.setState({ paymentSuccess: true });
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
 				alert('Payment Error');
-				this.setState({ paymentError: true })
+				this.setState({ paymentError: true });
 			});
 	};
 
@@ -107,17 +108,25 @@ class Book extends Component {
 			sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
 			production: 'YOUR-PRODUCTION-APP-ID'
 		};
-		if(paymentSuccess) {
-			return <div>GREAT SUCCESS</div>
+		if (paymentSuccess) {
+			return <div><h1>Thank you for your purchase</h1>Payment was successful your ebook has been sent to your email address</div>;
 		}
 
-		if(paymentError) {
-			return <div>GREAT ERROR</div>
+		if (paymentError) {
+			return <div><h1>there was a problem with your payment</h1>Payment was unsuccessful your ebook has been sent to your email address</div>;
 		}
 
 		return (
 			<div>
 				<div className="Book">
+					{/* <Modal open={true}>
+						<div>
+							
+						</div>
+					</Modal> */}
+					{/* <Modal open={false} >
+						Error
+					</Modal> */}
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
 						<Grid item xs={12} sm={4} className={classes.Grid}>
 							<LazyLoadImage className="book" src={book.img} alt="flintknapping" />
