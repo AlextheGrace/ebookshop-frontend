@@ -41,10 +41,12 @@ class Book extends Component {
 		super(props);
 		this.state = {
 			book: {},
-			paymentSuccess: true,
-			paymentError: false
+			paymentSuccess: false,
+			paymentError: false,
+			isLoading: false,
 		};
 		this.backToBook = this.backToBook.bind(this);
+		this.getBook = this.getBook.bind(this);
 	}
 
 	onToken = token => {
@@ -53,6 +55,7 @@ class Book extends Component {
 			amount: price,
 			token: token
 		};
+		this.setState({ isLoading: true })
 		axios
 			.post(`${process.env.REACT_APP_API_URL}/books/${this.state.book._id}/checkout`, body)
 			.then(res => {
@@ -72,6 +75,14 @@ class Book extends Component {
 
 	backToBook = (e) => {
 		console.log('back button clicked');
+		this.setState({ paymentSuccess: false });
+	}
+
+	getBook = () => {
+		axios.get(`${process.env.REACT_APP_API_URL}/books/${this.props.match.params.title}`).then(res => {
+			console.log(res);
+			this.setState({ book: res.data });
+		});
 	}
 
 	componentDidMount() {
@@ -117,7 +128,7 @@ class Book extends Component {
 
 		const backButton = <Button variant="contained" onClick={this.backToBook}>go back to book</Button>;
 
-		if (true) {
+		if (paymentSuccess) {
 			return (
 				<div>
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
