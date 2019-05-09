@@ -47,7 +47,7 @@ class Footer extends React.Component {
 						<img className={classes.cards} alt="mastercard" src={mastercard} />
 					</Grid>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
-						For Enquiries contact: ikarusbooks@gmail.com
+						For Enquiries contact: <a href="mailto:ikarusbooks@gmail.com">ikarusbooks@gmail.com</a>
 					</Grid>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
 						©2019 ikarus books
