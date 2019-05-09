@@ -44,6 +44,7 @@ class Book extends Component {
 			paymentSuccess: true,
 			paymentError: false
 		};
+		this.backToBook = this.backToBook.bind(this);
 	}
 
 	onToken = token => {
@@ -58,14 +59,20 @@ class Book extends Component {
 				console.log(res);
 
 				alert('Payment Success');
+				window.scrollTo(0, 0);
 				this.setState({ paymentSuccess: true });
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
 				alert('Payment Error');
+				window.scrollTo(0, 0);
 				this.setState({ paymentError: true });
 			});
 	};
+
+	backToBook = (e) => {
+		console.log('back button clicked');
+	}
 
 	componentDidMount() {
 		axios.get(`${process.env.REACT_APP_API_URL}/books/${this.props.match.params.title}`).then(res => {
@@ -107,6 +114,9 @@ class Book extends Component {
 		// 	sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
 		// 	production: 'YOUR-PRODUCTION-APP-ID'
 		// };
+
+		const backButton = <Button variant="contained" onClick={this.backToBook}>go back to book</Button>;
+
 		if (true) {
 			return (
 				<div>
@@ -114,6 +124,7 @@ class Book extends Component {
 						<Grid item xs={12}>
 							<h1>Thank you for your purchase</h1>
 							<p>Payment was successful your ebook has been sent to your email address</p>
+							{backButton}
 						</Grid>
 					</Grid>
 				</div>
@@ -127,6 +138,7 @@ class Book extends Component {
 						<Grid item xs={12}>
 							<h1>There was a problem with your payment</h1>
 							<p>Payment was unsuccessful your ebook has been sent to your email address</p>
+							{backButton}
 						</Grid>
 					</Grid>
 				</div>
