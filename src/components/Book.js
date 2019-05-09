@@ -41,7 +41,7 @@ class Book extends Component {
 		super(props);
 		this.state = {
 			book: {},
-			paymentSuccess: false,
+			paymentSuccess: true,
 			paymentError: false
 		};
 	}
@@ -107,11 +107,11 @@ class Book extends Component {
 		// 	sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
 		// 	production: 'YOUR-PRODUCTION-APP-ID'
 		// };
-		if (paymentSuccess) {
+		if (true) {
 			return (
 				<div>
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
-						<Grid item xs={12} className={classes.Grid}>
+						<Grid item xs={12}>
 							<h1>Thank you for your purchase</h1>
 							<p>Payment was successful your ebook has been sent to your email address</p>
 						</Grid>
@@ -124,7 +124,7 @@ class Book extends Component {
 			return (
 				<div>
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
-						<Grid item xs={12} className={classes.Grid}>
+						<Grid item xs={12}>
 							<h1>There was a problem with your payment</h1>
 							<p>Payment was unsuccessful your ebook has been sent to your email address</p>
 						</Grid>
