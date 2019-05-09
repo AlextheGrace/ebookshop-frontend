@@ -104,29 +104,31 @@ class Book extends Component {
 		let total = book.price; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
 		// Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
-		const client = {
-			sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
-			production: 'YOUR-PRODUCTION-APP-ID'
-		};
+		// const client = {
+		// 	sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
+		// 	production: 'YOUR-PRODUCTION-APP-ID'
+		// };
 		if (paymentSuccess) {
-			return <div><h1>Thank you for your purchase</h1>Payment was successful your ebook has been sent to your email address</div>;
+			return (
+				<div>
+					<h1>Thank you for your purchase</h1>
+					<p>Payment was successful your ebook has been sent to your email address</p>
+				</div>
+			);
 		}
 
 		if (paymentError) {
-			return <div><h1>there was a problem with your payment</h1>Payment was unsuccessful your ebook has been sent to your email address</div>;
+			return (
+				<div>
+					<h1>There was a problem with your payment</h1>
+					<p>Payment was unsuccessful your ebook has been sent to your email address</p>
+				</div>
+			);
 		}
 
 		return (
 			<div>
 				<div className="Book">
-					{/* <Modal open={true}>
-						<div>
-							
-						</div>
-					</Modal> */}
-					{/* <Modal open={false} >
-						Error
-					</Modal> */}
 					<Grid container spacing={16} justify="space-evenly" style={{ padding: 40 }}>
 						<Grid item xs={12} sm={4} className={classes.Grid}>
 							<LazyLoadImage className="book" src={book.img} alt="flintknapping" />

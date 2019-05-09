@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Switch, Route } from 'react-router-dom';
-import { Books, Authors, Contact, Book, Login, Dashboard} from './components';
+import { Books, Authors, Contact, Book, Login, Dashboard } from './components';
 import styling from './main.module.css';
 
 const styles = theme => ({
@@ -35,7 +35,7 @@ class Main extends Component {
 						<Route path="/books/:title" component={Book} />
 					</Switch>
 				</div>
-       			<Footer />
+				<Footer />
 			</div>
 		);
 	}
