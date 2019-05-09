@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import StripeCheckout from 'react-stripe-checkout';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Modal from '@material-ui/core/Modal';
 import './books.css';
 
 const styles = {

@@ -7,6 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import { shadows } from '@material-ui/system';
 import visa from 'payment-icons/min/flat/visa.svg';
 import mastercard from 'payment-icons/min/flat/mastercard.svg';
+import discover from 'payment-icons/min/flat/discover.svg';
+
 const styles = {
 	root: {
 		flexGrow: 1,
@@ -45,6 +47,7 @@ class Footer extends React.Component {
 					<Grid item xs={12} sm={12} className={classes.Grid}>
 						<img className={classes.cards} alt="visa" src={visa} />
 						<img className={classes.cards} alt="mastercard" src={mastercard} />
+						<img className={classes.cards} alt="discover" src={discover} />
 					</Grid>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
 						For Enquiries contact: <a href="mailto:ikarusbooks@gmail.com">ikarusbooks@gmail.com</a>
