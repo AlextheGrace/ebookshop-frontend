@@ -5,6 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { shadows } from '@material-ui/system';
+import visa from 'payment-icons/min/flat/visa.svg';
+import mastercard from 'payment-icons/min/flat/mastercard.svg'
 const styles = {
 	root: {
 		flexGrow: 1,
@@ -25,17 +27,11 @@ const styles = {
 	Grid: {
 		display: 'flex',
 		justifyContent: 'center',
+	},
+	cards: {
+		height: '2rem'
 	}
-	// GridContainer: {
-	// 	shadowOffset: {
-	// 		width: 0,
-	// 		height: 3,
-	// 	},
-	// 	shadowOpacity: 0.27,
-	// 	shadowRadius: 4.65,
-		
-	// 	elevation: 6,		
-	// }
+
 };
 
 class Footer extends React.Component {
@@ -46,10 +42,12 @@ class Footer extends React.Component {
 			<div  className={classes.root}>
 				<Grid container spacing={24}  boxShadow={2}  className={classes.GridContainer}>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
-						For enquiries contact: ikarusbooks@gmail.com
+						
+						<img className={classes.cards} alt="visa" src={visa}></img>
+						<img className={classes.cards} alt="mastercard" src={mastercard}></img>
 					</Grid>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
-						©2019 ikarus books
+						For Enquiries contact: ikarusbooks@gmail.com
 					</Grid>
 					<Grid item xs={12} sm={12} className={classes.Grid}>
 						©2019 ikarus books
