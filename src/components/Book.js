@@ -175,7 +175,7 @@ class Book extends Component {
 									token={this.onToken}
 									locale="auto"
 									name="Ikarus Books"
-									stripeKey="pk_test_1ZH6zDjZwu9QY27YC61eaA1Y00SflpwI85"
+									stripeKey={process.env.REACT_APP_STRIPE_KEY}
 									zipCode
 									email
 								>
