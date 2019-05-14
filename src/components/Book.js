@@ -61,15 +61,14 @@ class Book extends Component {
 			.then(res => {
 				console.log(res);
 
-				alert('Payment Success');
+				
 				window.scrollTo(0, 0);
-				this.setState({ paymentSuccess: true });
+				this.setState({ paymentSuccess: true, isLoading: false });
 			})
 			.catch(error => {
 				console.log('Payment Error: ', error);
-				alert('Payment Error');
 				window.scrollTo(0, 0);
-				this.setState({ paymentError: true });
+				this.setState({ paymentError: true, isLoading: false });
 			});
 	};
 
